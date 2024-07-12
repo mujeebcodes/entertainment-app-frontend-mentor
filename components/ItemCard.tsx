@@ -19,16 +19,17 @@ const ItemCard = ({
   const { title, year, rating, category, thumbnail } = item;
   if (trending) {
     return (
-      <Card className="w-60 md:w-[470px] relative">
-        <div className="absolute">
-          <CardTitle>{title}</CardTitle>
-          <CardDescription>{`${year} . ${category} . ${rating}`}</CardDescription>
+      <Card className="w-60 md:w-[470px] relative overflow-hidden">
+        <div className="absolute bottom-3 left-3 z-10 text-white">
+          <CardDescription className="font-medium">{`${year} . ${category} . ${rating}`}</CardDescription>
+          <CardTitle className="font-medium">{title}</CardTitle>
         </div>
-        <CardContent>
-          {/* <Image alt={title} src={thumbnail.trending?.large!} width="240" /> */}
-          <div className="w-full">
-            <img alt={title} src={thumbnail.trending?.large!} />
-          </div>
+        <CardContent className="p-0">
+          <img
+            alt={title}
+            src={thumbnail.trending?.large!}
+            className="w-full h-full object-cover"
+          />
         </CardContent>
       </Card>
     );

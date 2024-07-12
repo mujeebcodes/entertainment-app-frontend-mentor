@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import data from "@/data.json";
 import { MediaItem } from "@/types";
 import Trending from "@/components/Trending";
+import SearchBar from "@/components/SearchBar";
 
 export default function Home() {
   const [trending, setTrending] = useState<MediaItem[]>([]);
@@ -13,7 +14,7 @@ export default function Home() {
     setTrending(trendingItems);
   }, []);
   return (
-    <div>
+    <div className="overflow-hidden">
       <Trending items={trending} />
     </div>
   );
