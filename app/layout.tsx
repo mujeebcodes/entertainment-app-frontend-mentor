@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import DataContextProvider from "@/DataContext";
 
 const inter = Outfit({ subsets: ["latin"] });
 
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="h-screen w-screen flex flex-col sm:p-2 lg:flex-row lg:py-5 lg:gap-x-5">
-          <NavBar />
-          {children}
+        <div className="h-screen w-full max-w-[1440px] px-3 flex flex-col sm:p-2 lg:flex-row lg:py-5 lg:gap-x-5">
+          <DataContextProvider>
+            <NavBar />
+            {children}
+          </DataContextProvider>
         </div>
       </body>
     </html>

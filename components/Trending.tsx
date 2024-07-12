@@ -7,7 +7,7 @@ const Trending = ({ items }: { items: MediaItem[] }) => {
     return (
       <div>
         <h1 className="text-xl font-thin">Trending</h1>
-        <ScrollArea className="py-6 w-full lg:w-5/6 overflow-x-auto">
+        <ScrollArea className="py-6 w-full lg:w-5/6">
           <div className="flex gap-x-4">
             {items.map((item) => (
               <ItemCard key={item.title} item={item} trending={true} />

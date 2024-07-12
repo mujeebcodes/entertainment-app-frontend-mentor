@@ -4,6 +4,7 @@ import HomeIcon from "./icons/HomeIcon";
 import MoviesIcon from "./icons/MoviesIcon";
 import TvSeriesIcon from "./icons/TVSeriesIcon";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const NavItems = () => {
   const currentPath = usePathname();
